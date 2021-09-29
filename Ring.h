@@ -4,27 +4,30 @@
 
 #pragma once
 
+#include "Shape.h"
 
-class Ring {
 
-protected:
-    int *radius;
+class Ring : virtual public Shape {
+
+private:
+    double *areaR;
+    double *prmtrR;
+    int *radiusR;
+    double *areaSm;
+    double *areaBg;
 
 public:
 
-    Ring(int radius_);
-
-    Ring(const Ring &ring);
+    Ring(int _radius, int _radiusR);
 
     ~Ring(void);
 
-    int getRing();
+    double area() override;
 
-    void SetRadius(int radiusS);
+    double perimetry() override;
 
-    virtual double area() = 0;
-    virtual double perimetry() = 0;
 
 };
+
 
 

@@ -4,13 +4,14 @@
 
 
 #pragma once
+
 #include <iostream>
 
-#include "Ring.h"
+#include "Shape.h"
 
 using namespace std;
 
-class Circle : virtual public Ring {
+class Circle : virtual public Shape {
 
 private:
     double *areaC;
@@ -21,8 +22,8 @@ public:
 
     ~Circle(void);
 
-    double area()override;
+    double area() override;
 
-    double perimetry()override;
+    double perimetry() override;
 
 };

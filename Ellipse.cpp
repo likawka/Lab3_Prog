@@ -11,9 +11,10 @@
 using namespace std;
 const int PI = 3.14;
 
-Ellipse::Ellipse(int _radius) : Ring(_radius) {
+Ellipse::Ellipse(int _radius, int _radiusR) : Shape(_radius) {
     areaE = new double(0);
     prmtrE = new double(0);
+    radiusR = new int(_radiusR);
 }
 
 Ellipse::~Ellipse(void) {
@@ -23,13 +24,13 @@ Ellipse::~Ellipse(void) {
 
 double Ellipse::area() {
 
-*areaE = PI * *radius * *radiusR;
+    *areaE = PI * *radius * *radiusR;
     return *areaE;
 }
 
 double Ellipse::perimetry() {
 
-    *prmtrE = 4* ((PI * *radiusR * *radius + pow((*radiusR - *radius),2 ) ) /  (*radiusR + *radius));
+    *prmtrE = 4 * ((PI * *radiusR * *radius + pow((*radiusR - *radius), 2)) / (*radiusR + *radius));
 
     return *prmtrE;
 }

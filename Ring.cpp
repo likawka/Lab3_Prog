@@ -2,25 +2,44 @@
 // Created by Iryna Zinko on 9/29/21.
 //
 #include <iostream>
+#include <cmath>
+
 #include "Ring.h"
+#include "Circle.h"
 
-Ring::Ring(int radius_) {
-    radius = new int(radius_);
 
-}
+using namespace std;
+const int PI = 3.14;
 
-Ring::Ring(const Ring &ring) {
-    radius = new int(*ring.radius);
+Ring::Ring(int _radius, int _radiusR) : Shape(_radius) {
+    areaR = new double(0);
+    prmtrR = new double(0);
+    areaSm = new double(0);
+    areaBg = new double(0);
+    radiusR = new int(_radiusR);
+
+
 }
 
 Ring::~Ring(void) {
-    delete radius;
+    delete areaR;
+    delete prmtrR;
+    delete areaSm;
+    delete areaBg;
 }
 
-int Ring::getRing() {
-    return *radius;
+double Ring::area() {
+    *areaSm = PI * pow(*radius, 2);
+    *areaBg = PI * pow(*radiusR, 2);
+
+    *areaR = *areaBg - *areaSm;
+
+    return *areaR;
 }
 
-void Ring::SetRadius(int radiusS) {
-    *this->radius = radiusS;
+double Ring::perimetry() {
+
+    *prmtrR = (2 * *radiusR * PI);
+
+    return *prmtrR;
 }

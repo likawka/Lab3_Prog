@@ -6,12 +6,12 @@
 #include <cmath>
 
 #include "Circle.h"
-#include "Ring.h"
+#include "Shape.h"
 
 using namespace std;
 const int PI = 3.14;
 
-Circle::Circle(int _radius) : Ring(_radius) {
+Circle::Circle(int _radius) : Shape(_radius) {
     areaC = new double(0);
     prmtrC = new double(0);
 }
